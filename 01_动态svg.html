@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_动态svg</title>
+    <style>
+        .icon{
+            height: 200px;
+            width: 200px;
+        }
+        .icon:hover {
+            animation: move 5s;
+        }
+
+        .icon1 {
+            fill: none;
+            stroke: #000;
+            stroke-width: 1px;
+            stroke-linecap: round;
+        }
+
+        @keyframes move {
+            0% {
+                stroke-dasharray: 0 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 1000px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg class="icon" version="1.1" id="svg4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 90 85" xml:space="preserve">
+        <g class="icon1">
+            <g class="icon1">
+                <path class="icon1" d="M12.76,58.65H5.59c-1.1,0-2-0.9-2-2V5.02c0-1.1,0.9-2,2-2h7.17c1.1,0,2,0.9,2,2v51.63
+                    C14.76,57.75,13.86,58.65,12.76,58.65z" ></path>
+                <path class="icon1" d="M5.95,82.11L5.95,59.54" ></path>
+                <path class="icon1" d="M12.33,82.11L12.33,59.54" ></path>
+                <path class="icon1" d="M15.45,49.86L23.91,49.86" ></path>
+                <path class="icon1" width="47.2" height="6.55" d="M24.74 46.62 L71.94 46.62 L71.94 53.169999999999995 L24.74 53.169999999999995 Z"></path>
+                <path class="icon1" d="M68.87,53.18c-1.82,2.99-7.73,13.54-7.63,28.37L35.5,67.12" ></path>
+                <path class="icon1" d="M49.29,53.18L34.48,63.7" ></path>
+                <path class="icon1" d="M62.98,53.18L36.89,72.34" ></path>
+                <path class="icon1" d="M29.68,53.18c1.82,2.99,7.73,13.54,7.63,28.37l27.08-18.79" ></path>
+                <path class="icon1" d="M62.41,69.87L37.18,53.18" ></path>
+                <path class="icon1" d="M45.64000000000001,21.61A18.79,18.79 0,1,1 83.22,21.61A18.79,18.79 0,1,1 45.64000000000001,21.61" ></path>
+                <path class="icon1" d="M70.6,3.87c0,0-17.53,9.81-16.6,33.38" ></path>
+                <path class="icon1" d="M61.73,3.02c0,0-1.75,6.02,21.03,14.44" ></path>
+                <path class="icon1" d="M46.03,25.43c3.18-3.36,12.68-9.33,23.94,14.14" ></path>
+                <path class="icon1" d="M49.79,9.84c0,0,16.19,1.01,29.7,23" ></path>
+            </g>
+        </g>
+    </svg>
+</body>
+
+</html>

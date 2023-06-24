@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_class</title>
+</head>
+
+<body>
+    <script>
+        // console.log( new Person()); // 报错 Uncaught ReferenceError: Cannot access 'Person' before initialization，用class定义的类不存在变量提升，使用functionu关键字定义的类存在变量提升
+        class Person {
+            city = 'Guangzhou' // 会定义在实例的属性上
+            constructor(name, age) { // 会自动创建，挂载在类的原型上，默认返回实例对象this
+                this.name = name;
+                this.age = age
+                console.log(this); // 这里的this指向实例对象
+            } // 不用加逗号
+            getNameAndAge() { // 不用加function，会挂载到实例对象的原型上
+                return `我是${this.name},${this.age}岁`
+            }
+            // getter和setter
+            get prop() {
+                return '你正在获取prop属性'
+            }
+            set prop(newval) {
+                console.log(`你正在设置prop属性为${newval}`);
+                return true
+            }
+            // 静态方法:只能被类调用，而不能被创建出来的实例对象调用，静态方法会直接挂载到类的属性上，而不是原型上
+            static staticFunc() {
+                console.log('我是Person类的静态方法staticFunc');
+                console.log(this); // 静态方法中的this执行类本身，而不是实例对象
+            }
+            // 静态属性
+            static staticVal = '我是Person类上的静态属性staticVal'
+        }
+
+        const me = new Person('左下', 24)
+        console.log(me); // Person {city: 'Guangzhou', name: '左下', age: 24}
+        console.dir(me.constructor); // me.constructor指向Person类本身
+        console.log(me.getNameAndAge()); // 我是左下,24岁
+        const me2024 = new Person('左下', 25)
+        console.log(me.__proto__ === me2024.__proto__); // true
+        console.log(typeof Person); // function
+        Person.staticFunc()
+        console.log(me.staticFunc); // undefined
+        console.log(Person.staticVal);
+        console.log(me.staticVal); // undefined
+        console.log(Person.name);
+    </script>
+    </script>
+</body>
+
+</html>
